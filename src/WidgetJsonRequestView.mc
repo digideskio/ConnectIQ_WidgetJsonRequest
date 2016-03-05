@@ -37,7 +37,7 @@ class WidgetJsonRequestView extends Ui.View {
     function onLayout(dc) {
 
         Comm.makeJsonRequest(
-            "https://httpbin.org/get",
+            "http://httpbin.org/get",
             {
                 "Monkeys" => "Awesome",
                 "ConnectIQ" => "1337"
@@ -65,6 +65,7 @@ class WidgetJsonRequestView extends Ui.View {
         }
         else {
             mMessage = "Failed to load\nError: " + responseCode.toString();
+            mMessage += "\nError: " + data;
         }
         Ui.requestUpdate();
     }
